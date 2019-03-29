@@ -7,14 +7,31 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = view.center
+        loginButton.readPermissions = ["email"]
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+        
+        if let token = FBSDKAccessToken.current() {
+
+        }
     }
-
-
 }
 

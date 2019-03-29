@@ -6,8 +6,7 @@ target 'PhotosViewer' do
   use_frameworks!
 
   # Pods for PhotosViewer
-pod 'FacebookCore'
-pod 'FacebookLogin'
-pod 'FacebookShare'
+  pod 'FBSDKCoreKit', '~> 4.38.0'
+  pod 'FBSDKLoginKit', '~> 4.38.0'
 
 end
